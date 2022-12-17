@@ -9,6 +9,7 @@ node src/app.js --flags "values"
 
 
 ### create table entries
+
 ```
 --create movie --title <title> --director <director> --rating <int>
 --create actor --name <name> --age <int> --nationality <nationality>
@@ -23,6 +24,7 @@ eg
   
   
   ### reading a full table
+  
   ```
   --readAll actor
   --readAll movie
@@ -31,6 +33,7 @@ eg
   ```
   
   ### read table with a query/where clause
+  
   ```
   --read actor --where "query string"
   --read movie --where "query string"
@@ -53,11 +56,14 @@ eg
 --delete  movie --where "director:J.J.Abrams,rating:3"
 ```
 
+
 ### updating entries
+
 n.b. 
   --where flag currently not used as each table has its own update flag
-'''
+  
+```
 --updateMovie "title:The Beach" --rating 4
 --updateActor "name:Charles Bronson" --age 81
 --updateMovie  "rating:3,director:Danny Boyle" --rating 4
-'''
+```
