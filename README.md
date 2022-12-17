@@ -7,11 +7,20 @@ node src/app.js --flags "values"
 --flags
 <...> user defined surround with "" if word breaks
 
+
+### create table entries
 ```
 --create movie --title <title> --director <director> --rating <int>
 --create actor --name <name> --age <int> --nationality <nationality>
 ```
-  (--title and --name required others optional)
+(--title and --name required others optional)
+
+eg
+```
+--create movie --title ET --director "S.Spielburg" --rating 9
+--create movie --title Jaws --director "S.Spielburg" 
+```
+  
   
   ### reading a full table
   ```
