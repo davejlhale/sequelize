@@ -47,7 +47,7 @@ eg
   --read movie --where "rating:3,director:Ben Affleck"
   --read actor --where "nationality:english,age:32"
   ```
-** n.b. if the where clause forms incorrectly it will default to where {} and thus act as an alias to --readALL**
+**n.b. if the where clause forms incorrectly it will default to where {} and thus act as an alias to --readALL**
 
 ### deleting entries
 
