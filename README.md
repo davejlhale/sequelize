@@ -67,3 +67,16 @@ n.b.
 --updateActor "name:Charles Bronson" --age 81
 --updateMovie  "rating:3,director:Danny Boyle" --rating 4
 ```
+
+### add actor - movie association
+
+```
+--starredIn --actor <name> --movie <name>
+```
+
+### display associations
+
+```
+--moviesWith "Ben Affleck"
+```
+
