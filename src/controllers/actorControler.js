@@ -48,13 +48,15 @@ exports.deleteEntry = async (table, queryString) => {
     let results = {};
     try {
         let whereClause = buildObjFromString(queryString, table)
+        let isEmpty = Object.entries(whereClause).length === 0;
+        if (isEmpty) throw "Full table deletion disabled"
         results = await dbModel.destroy({
             where: whereClause
         });
         console.debug(`${table} table is now`)
         this.readAll(table);
     } catch (error) {
-
+        console.log(error)
     }
 }
 
@@ -64,7 +66,9 @@ exports.updateActor = async (string, args) => {
     let results = {};
     try {
         //find the entry to update.
-        let whereClause = buildObjFromString(string)
+        let whereClause = buildObjFromString(string,"Actor")
+        let isEmpty = Object.entries(whereClause).length === 0;
+        if (isEmpty) throw "Full table update disabled"
         results = await Actor.findAll({
             where: whereClause
         });
@@ -77,8 +81,8 @@ exports.updateActor = async (string, args) => {
             if (args.name) {
                 actor.name = args.name;
             }
-            if (args.age) {
-                actor.age = args.age;
+            if (args.age || args.age === 0 ) {
+                actor.age = args.age ;
             }
             if (args.nationality) {
                 actor.nationality = args.nationality;
