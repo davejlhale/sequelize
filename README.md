@@ -45,4 +45,19 @@ eg
   --read actor --where "nationality:english,age:32"
   ```
 
+### deleting entries
 
+```
+--delete  movie --where "title:Argo" 
+--delete  actor --where "age:32" 
+--delete  movie --where "director:J.J.Abrams,rating:3"
+```
+
+### updating entries
+n.b. 
+  --where flag currently not used as each table has its own update flag
+'''
+--updateMovie "title:The Beach" --rating 4
+--updateActor "name:Charles Bronson" --age 81
+--updateMovie  "rating:3,director:Danny Boyle" --rating 4
+'''
